@@ -21,7 +21,7 @@ const Home = () => {
                 <h1 className='text-5xl font-semibold'>Job Catagory</h1>
                 <p className='mt-6'>Explore thousands of job opportunities with all the information you need. Its your future</p>
             </div>
-            <div className='my-8 grid grid-cols-4 '>
+            <div className='my-8 grid grid-cols-1 sm:grid-cols-4 gap-5 '>
                 {
                     jobCatagorys.map(jobCatagory => <SingleJobCatagory
                     key={jobCatagory.id}
@@ -35,7 +35,7 @@ const Home = () => {
                     <h1  className='text-5xl font-semibold'>Featured Jobs</h1>
                     <p className='mt-6'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
-                <div className='my-8'>
+                <div className='my-8 grid grid-cols-1 sm:grid-cols-2 gap-5'>
                    {showAll
                     ? featuredJobs.map((featuredJob) => <SingleFeaturedJobs featuredJob={featuredJob} />)
                         : featuredJobs
