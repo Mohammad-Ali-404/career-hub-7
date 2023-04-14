@@ -4,6 +4,14 @@ import { useLoaderData } from 'react-router-dom';
 const FeaturedJobDetails = () => {
     const jobs = useLoaderData()
     const {salary, job_title, job_description, responsibillity, education, experience, phone, email, address} = jobs
+    const handleAppliedJob = () =>{
+        const storedData = JSON.parse(localStorage.getItem("jobs"));
+            if(storedData){
+                localStorage.setItem("jobs",JSON.stringify([...storedData,jobs]))
+            }else{
+                localStorage.setItem("jobs",JSON.stringify([jobs]))
+            }
+        }
     return (
         <div>
            <div>
@@ -34,7 +42,7 @@ const FeaturedJobDetails = () => {
                         <p><span>Email</span>:  {email}</p>
                         <p><span>Address</span>:  {address}</p>
                     </div>
-                    <button className="btn btn-outline btn-accent w-96">Apply Now</button>
+                    <button onClick={handleAppliedJob} className="btn btn-outline btn-accent w-96">Apply Now</button>
                    </div>
                 </div>
             </div>
