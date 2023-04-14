@@ -34,7 +34,7 @@ const AppliedJobs = () => {
                 filterJob?.map((jobs) => (
                 <div className="my-4 w-full">
 
-                        <SingleFeaturedJobs featuredJob ={jobs}/>
+                        <SingleFeaturedJobs  featuredJob ={jobs}/>
 
                 </div>
                 ))
