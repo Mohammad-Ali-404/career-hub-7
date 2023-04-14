@@ -12,6 +12,7 @@ import Chart from './Pages/Chart/Chart';
 import Blog from './Pages/Blog/Blog';
 import NotFound from './Pages/NotFound/NotFound';
 import FeaturedJobDetails from './components/FeaturedJobDetails/FeaturedJobDetails';
+import AppliedJobs from './Pages/AppliedJobs/AppliedJobs';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
      {
       path:"/blog",
       element:<Blog></Blog>
+     },
+     {
+      path:"/jobs",
+      element:<AppliedJobs></AppliedJobs>
      },
      {
       path:'featuredJob/:jobId',
