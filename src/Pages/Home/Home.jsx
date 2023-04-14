@@ -37,10 +37,10 @@ const Home = () => {
                 </div>
                 <div className='my-8 grid grid-cols-1 sm:grid-cols-2 gap-5'>
                    {showAll
-                    ? featuredJobs.map((featuredJob) => <SingleFeaturedJobs featuredJob={featuredJob} />)
+                    ? featuredJobs.map((featuredJob) => <SingleFeaturedJobs key={featuredJob.id} featuredJob={featuredJob} />)
                         : featuredJobs
                             .slice(0, 4)
-                            .map((featuredJob) => <SingleFeaturedJobs featuredJob={featuredJob} />)}
+                            .map((featuredJob) => <SingleFeaturedJobs key={featuredJob.id} featuredJob={featuredJob} />)}
                                 
                 </div>
                     <div className="text-center">
