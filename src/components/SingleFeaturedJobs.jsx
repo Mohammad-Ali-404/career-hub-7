@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleFeaturedJobs = ({featuredJob}) => {
-    console.log(featuredJob)
     const {id, job_title, image, company_name, time, work_area, address, salary} = featuredJob;
     return (
         <div>
@@ -21,7 +21,7 @@ const SingleFeaturedJobs = ({featuredJob}) => {
                         <p>$Salary:{salary}</p>
                     </div>
                     <div className="card-actions justify-left">
-                    <button className="btn btn-primary">View Details</button>
+                    <Link to={`/featuredJob/${id}`} className="btn btn-primary">View Details</Link>
                     </div>
                 </div>
             </div>

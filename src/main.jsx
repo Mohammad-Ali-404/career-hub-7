@@ -11,6 +11,7 @@ import ErrorPage from './Pages/Errorpage/ErrorPage';
 import Chart from './Pages/Chart/Chart';
 import Blog from './Pages/Blog/Blog';
 import NotFound from './Pages/NotFound/NotFound';
+import FeaturedJobDetails from './components/FeaturedJobDetails/FeaturedJobDetails';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,19 @@ const router = createBrowserRouter([
       path:"/blog",
       element:<Blog></Blog>
      },
+     {
+      path:'featuredJob/:jobId',
+      element:<FeaturedJobDetails></FeaturedJobDetails>,
 
+      loader: async ({params}) => {
+        const res = await fetch("/featuredJobs.json");
+        const featuredJob = await res.json();
+
+        const findJob = featuredJob.find(job => job.id == params.jobId);
+
+        return findJob;
+      }
+     },
 
 
 
